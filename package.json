@@ -1,20 +1,28 @@
 {
-    "name": "mongoose_skeleton",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node server.js",
-      "watch": "nodemon server.js",
-      "seed": "node seeders/seed.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^4.16.3",
-      "mongoose": "^5.3.16",
-      "morgan": "^1.9.1"
-    }
-  }
-  
+  "name": "mongoose_skeleton",
+  "version": "1.0.0",
+  "description": "A workout tracker using Mongo database with a Mongoose schema to handle routes with Express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.10",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamWhite86/Fitness_App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WilliamWhite86/Fitness_App/issues"
+  },
+  "homepage": "https://github.com/WilliamWhite86/Fitness_App#readme"
+}

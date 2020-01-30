@@ -1,8 +1,9 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect("mongodb://localhost/workout_db", {
   useNewUrlParser: true,
+  useUnifiedTopology: true,
   useFindAndModify: false
 });
 
