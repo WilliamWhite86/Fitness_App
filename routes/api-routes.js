@@ -4,35 +4,28 @@
 
 // Dependencies
 // =============================================================
+const router = require("express").Router();
 
 // Requiring our Workout and Index models
+
 const db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
-
-  // GET route for getting all of the workouts
-//   app.get("/workouts/", function(req, res) {
-//     db.Workout.findAll({})
-//       .then(function(dbWorkout) {
-//         console.log(res);
-//         res.json(dbWorkout);
-//       });
-//   })};
 
 
 // getLastWorkout() GET /api/workouts
-app.get("/workouts", (req, res) => {
-    db.Workout.find({})
-      .then(dbWorkout => {
-        res.json(dbWorkout);
-      })
-      .catch(err => {
-        res.json(err);
-      });
-  });
-  };  
+router.get("/workouts", (req, res) => {
+  db.Workout.find({})
+    .sort({ date: -1 })
+    .then(dbWorkout => {
+      console.log(dbWorkout);
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+});
 
 
 
@@ -47,3 +40,4 @@ app.get("/workouts", (req, res) => {
 
 
 // getWorkoutsInRange() /api/workouts/range
+module.exports = router;

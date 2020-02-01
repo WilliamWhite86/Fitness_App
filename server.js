@@ -2,7 +2,6 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const routes = require('./routes');
-// const db = require("./models");
 
 const PORT = process.env.PORT || 3000;
 
@@ -23,9 +22,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout_db", {
   useFindAndModify: false
 })
 .then(() => console.log(`successfully connected to database: ${databaseName}`))
-
-// routes
-// app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
