@@ -68,18 +68,14 @@ router.post('/workouts', (req, res) => {
 
 // getWorkoutsInRange() /api/workouts/range
 router.get("/workouts/range", (req, res) => {
-  db.Workout.find({})
-  //.sort({day: -1}).execFind(function(err,docs){
-
-  //});
-  // limit(7)
-    .then(dbWorkout => {
-      console.log(dbWorkout);
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
+  db.Workout
+  .find({})
+  .sort({day: -1})  
+  .limit(7)
+  .exec(function(err,docs){
+      console.log(docs)
+      res.json(docs)
+  })
 });
 
 
